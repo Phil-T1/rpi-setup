@@ -22,6 +22,11 @@
 #
 # m h  dom mon dow   command
 
-# Start WOL server on reboot
-@reboot cd /home/phil/dev/wol-api && python3 wol_api.py &
-@reboot cd /home/phil/dev/climate-control && python3 climate_control.py
+# Email log (for debugging)
+#MAILTO=phil.tegg@gmail.com
+
+# Update and upgrade
+0 3 * * * /home/phil/update_upgrade.sh
+
+# Run reboot processes -  email notify user
+@reboot sleep 60 && /home/phil/reboot.sh
