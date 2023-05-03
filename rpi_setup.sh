@@ -16,7 +16,7 @@ sudo rm get-docker.sh
 sudo usermod -aG docker $USER
 
 # Install micro text editor (and config)
-sudo curl https://getmic.ro | bash
+sudo curl https://getmic.ro | sudo bash
 sudo mv micro /usr/bin
 sudo git clone https://github.com/Phil-T1/micro-config /home/$USER/.config/micro
 
