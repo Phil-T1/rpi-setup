@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Raspberry Pi Default Server Config - v1.0
+# 03-May-2023
+
 # Update installation
 sudo apt update -y && sudo apt upgrade -y
 
