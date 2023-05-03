@@ -21,7 +21,8 @@ sudo mv micro /usr/bin
 sudo git clone https://github.com/Phil-T1/micro-config /home/$USER/.config/micro
 
 # Always require password for sudo
-sudo echo "$USER ALL=(ALL) PASSWD: ALL" > /etc/sudoers.d/010_pi-nopasswd
+sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
+sed -i 's/NOPASSWD/PASSWD/g' /etc/sudoers.d/010_pi-nopasswd
 
 # Reboot
 echo "Please enter password to reboot to complete installation:"
