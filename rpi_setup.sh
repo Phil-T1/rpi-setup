@@ -15,11 +15,8 @@ sudo sh get-docker.sh
 sudo rm get-docker.sh
 sudo usermod -aG docker $USER
 
-# Install docker-compose
-#sudo apt install docker-compose -y
-
 # Install micro text editor (and config)
-sudo curl https://getmic.ro | basg
+sudo curl https://getmic.ro | bash
 sudo mv micro /usr/bin
 sudo git clone https://github.com/Phil-T1/micro-config /home/$USER/.config/micro
 
