@@ -20,6 +20,11 @@ sudo curl https://getmic.ro | sudo bash
 sudo mv micro /usr/bin
 sudo git clone https://github.com/Phil-T1/micro-config /home/$USER/.config/micro
 
+# Create standard project dirs
+sudo mkdir -p /home/$USER/projects/test
+sudo mkdir /home/$USER/projects/prod
+sudo mkdir /home/$USER/projects/dev
+
 # Always require password for sudo
 sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
 sed -i 's/NOPASSWD/PASSWD/g' /etc/sudoers.d/010_pi-nopasswd
