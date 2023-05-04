@@ -26,8 +26,8 @@ sudo mkdir /home/$USER/projects/prod
 sudo mkdir /home/$USER/projects/dev
 
 # Always require password for sudo
-sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
-sed -i 's/NOPASSWD/PASSWD/g' /etc/sudoers.d/010_pi-nopasswd
+sudo sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
+sudo sed -i 's/NOPASSWD/PASSWD/g' /etc/sudoers.d/010_pi-nopasswd
 
 # Reboot
 echo "Please enter password to reboot to complete installation:"
