@@ -25,6 +25,9 @@ sudo mkdir -p /home/$USER/projects/test
 sudo mkdir /home/$USER/projects/prod
 sudo mkdir /home/$USER/projects/dev
 
+# Make all the directories user's
+sudo chown -R $USER ~/projects
+
 # Always require password for sudo
 sudo sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
 sudo sed -i 's/NOPASSWD/PASSWD/g' /etc/sudoers.d/010_pi-nopasswd
