@@ -6,6 +6,11 @@
 # Update installation
 sudo apt update -y && sudo apt upgrade -y
 
+# Increase SWAP size to 1024 MB
+sudo dphys-swapfile swapoff
+sudo sed -i "s/^CONF_SWAPSIZE=.*/CONF_SWAPSIZE=1024/" /etc/dphys-swapfile
+sudo dphys-swapfile swapon
+
 # Install packages
 sudo apt install -y git fail2ban ufw
 
