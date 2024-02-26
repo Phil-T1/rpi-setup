@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Raspberry Pi Default Server Config - v1.0
-# 03-May-2023
+# Raspberry Pi Default Server Config - v1.1
+# 26-Feb-2024
 
 # Update installation
-sudo apt update -y && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 # Increase SWAP size to 1024 MB
 sudo dphys-swapfile swapoff
@@ -26,17 +26,18 @@ sudo mv micro /usr/bin
 sudo git clone https://github.com/Phil-T1/micro-config /home/$USER/.config/micro
 
 # Create standard project dirs
-sudo mkdir -p /home/$USER/projects/test
-sudo mkdir /home/$USER/projects/prod
+sudo mkdir -p /home/$USER/projects/tst
+sudo mkdir /home/$USER/projects/prd
 sudo mkdir /home/$USER/projects/dev
 
 # Make all the directories user's
 sudo chown -R $USER ~/projects
 
-# Always require password for sudo
+# No password for sudo
 sudo sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
-sudo sed -i 's/NOPASSWD/PASSWD/g' /etc/sudoers.d/010_pi-nopasswd
+
+# Set DNS host address
+# !
 
 # Reboot
-echo "Please enter password to reboot to complete installation:"
-sudo reboot
+echo "Please reboot now to complete the setup..."
