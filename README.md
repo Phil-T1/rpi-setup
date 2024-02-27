@@ -4,8 +4,7 @@
 <ol>
   <li>Update and upgrade system</li>
   <li>Install Git, UFW, and Fail2Ban</li>
-  <li>Install Docker</li>
-  <li>Add root user to Docker group (don't need to type sudo)</>
+  <li>Install Docker and add root user to Docker group</li>
   <li>Install Micro with config and set as system text editor</li>
   <li>Create project dirs</li>
   <li>Recommend reboot</li>
