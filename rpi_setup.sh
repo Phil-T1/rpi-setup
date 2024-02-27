@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Raspberry Pi Default Server Config - v1.1
-# 26-Feb-2024
+# 27-Feb-2024
 
 # Update installation
 sudo apt update && sudo apt upgrade -y
@@ -20,10 +20,12 @@ sudo sh get-docker.sh
 sudo rm get-docker.sh
 sudo usermod -aG docker $USER
 
-# Install micro text editor (and config)
+# Install micro text editor and config, set as system text editor
 sudo curl https://getmic.ro | sudo bash
 sudo mv micro /usr/bin
 sudo git clone https://github.com/Phil-T1/micro-config /home/$USER/.config/micro
+cd /usr/bin
+curl https://getmic.ro/r | sudo sh
 
 # Create standard project dirs
 sudo mkdir -p /home/$USER/projects/tst
@@ -32,12 +34,6 @@ sudo mkdir /home/$USER/projects/dev
 
 # Make all the directories user's
 sudo chown -R $USER ~/projects
-
-# No password for sudo
-sudo sed -i "s/pi/$USER/g" /etc/sudoers.d/010_pi-nopasswd
-
-# Set DNS host address
-# !
 
 # Reboot
 echo "Please reboot now to complete the setup..."
