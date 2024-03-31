@@ -12,7 +12,7 @@ sudo sed -i "s/^CONF_SWAPSIZE=.*/CONF_SWAPSIZE=1024/" /etc/dphys-swapfile
 sudo dphys-swapfile swapon
 
 # Install packages
-sudo apt install -y git fail2ban ufw
+sudo apt install -y git fail2ban ufw rclone
 
 # Install docker
 sudo curl -fsSL https://get.docker.com -o get-docker.sh
