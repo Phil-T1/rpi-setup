@@ -3,7 +3,7 @@
 <h3>Summary:</h3>
 <ol>
   <li>Update and upgrade system</li>
-  <li>Install Git, UFW, Fail2Ban and Rclone</li>
+  <li>Install Git, UFW, Fail2Ban, Rclone and Samba</li>
   <li>Install Docker and add root user to Docker group</li>
   <li>Install Micro with config and set as system text editor</li>
   <li>Create project dirs</li>
